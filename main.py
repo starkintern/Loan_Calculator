@@ -2,16 +2,25 @@ def loan_interest(principal, interest_rate, period, num_periods):
     return (principal * (1 + (interest_rate / period)) ** (period * num_periods)) - principal
 
 
-usr_principal = int(input("Enter principal amount: "))
+usr_principal = float(input("Enter principal amount: "))
 
-usr_interest_rate = float(input("Enter interest rate in percentage: ")) / 100
+usr_interest_rate = float(input("Enter interest rate as percentage: ")) / 100
 
-usr_period = int(input("Enter interest period (Day, month, or year): "))
+usr_period = input("Enter interest period frequency per year (365, 12, 6, 1): ")
 
-usr_num_periods = int(input("Enter number of interest periods: "))
+match usr_period.lower:
+    case "day" | "days" | "365":
+        usr_period = 365
+    case "month" | "months" | "12":
+        usr_period = 12
+    case "semi-annually" | "bi-annually" | "6":
+        usr_period = 6
+    case "year" | "years" | "1":
+        usr_period = 1
 
-interest = loan_interest(principal=usr_principal, interest_rate=usr_interest_rate, period=usr_period,
+usr_num_periods = int(input("Enter number of years to accrue interest: "))
+
+interest = loan_interest(principal=usr_principal, interest_rate=usr_interest_rate, period=int(usr_period),
                          num_periods=usr_num_periods)
-
 
 print(f"You will owe ${interest:.2f} in interest")
