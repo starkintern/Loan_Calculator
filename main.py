@@ -6,6 +6,10 @@ usr_interest_rate = float(input("Enter interest rate as percentage: ")) / 100
 
 usr_period_input = input("Enter interest period frequency per year (365, 12, 6, 1): ")
 
+usr_income_input = float(input("Enter your monthly income: "))
+
+usr_expenses_input = float(input("Enter your monthly expenses: "))
+
 match usr_period_input.lower:
     case "day" | "days" | "365":
         usr_period_input = 365
@@ -17,8 +21,6 @@ match usr_period_input.lower:
         usr_period_input = 1
 usr_num_periods = int(input("Enter number of years to accrue interest: "))
 
-
-loan1 = Loan(principal= usr_principal, interest_rate= usr_interest_rate, period=int(usr_period_input),
-             num_periods= usr_num_periods)
+loan1 = Loan(principal=usr_principal, interest_rate=usr_interest_rate, period=int(usr_period_input),
+             num_periods=usr_num_periods)
 print(loan1.loan_interest())
-

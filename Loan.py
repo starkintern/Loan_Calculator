@@ -10,6 +10,12 @@ class Loan:
                 ** (self.period * self.num_periods)) - self.principal
 
 
+class Budget:
+    def __init__(self, income, expenses):
+        self.income = income
+        self.expenses = expenses
+
+
 if __name__ == '__main__':
     loan1 = Loan(principal=15000, interest_rate=0.05, period=3, num_periods=12)
     print(f"Loan total: ${loan1.loan_interest():.2f}")
