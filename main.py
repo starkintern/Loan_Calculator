@@ -1,4 +1,9 @@
-from Loan import Loan
+from Loan import Loan, Budget
+import datetime
+
+tdelta = datetime.timedelta
+
+today = datetime.date.today()
 
 usr_principal = float(input("Enter principal amount: "))
 
@@ -24,3 +29,6 @@ usr_num_periods = int(input("Enter number of years to accrue interest: "))
 loan1 = Loan(principal=usr_principal, interest_rate=usr_interest_rate, period=int(usr_period_input),
              num_periods=usr_num_periods)
 print(loan1.loan_interest())
+
+while usr_principal > 0:
+    Loan - Budget
