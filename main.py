@@ -7,7 +7,6 @@ today = datetime.date.today()
 days_in_current_month = calendar.monthrange(today.year, today.month)[1]
 days_till_end_month = days_in_current_month - today.day
 start_date = today + datetime.timedelta(days=days_till_end_month + 1)
-end_date = start_date
 
 usr_principal = float(input("Enter principal amount: "))
 
