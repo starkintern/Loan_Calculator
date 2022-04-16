@@ -10,6 +10,20 @@ class Loan:
                 ** (self.period * self.num_periods)) - self.principal
 
 
+def loan_total(_loan_list):
+    total = 0
+    for i in _loan_list:
+        total += i
+
+
+_loan_list = [Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()),
+              Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()),
+              Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()),
+              Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()),
+              Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()),
+              Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input())]
+
+
 class Budget:
     def __init__(self, income, expenses):
         self.income = income
