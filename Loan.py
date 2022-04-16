@@ -16,12 +16,16 @@ def loan_total(_loan_list):
         total += i
 
 
-_loan_list = [Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()),
-              Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()),
-              Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()),
-              Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()),
-              Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()),
-              Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input())]
+_loan_list = []
+for x in _loan_list:
+    _loan_list.append(Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()))
+    _loan_list.append(input("Would you like to add another loan? Type Yes or No"))
+        if input() == "Yes":
+            continue
+        if input() == "No":
+            break
+        print(_loan_list)
+
 
 
 class Budget:

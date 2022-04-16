@@ -37,7 +37,5 @@ print(loan1.loan_interest())
 while usr_principal > 0:
     if loan_total > Budget:
 
-    print(end_date, usr_principal)
-
     days_in_current_month = calendar.monthrange(end_date.year, end_date.month)[1]
     end_date = end_date + datetime.timedelta(days=days_till_end_month)
