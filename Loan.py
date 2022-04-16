@@ -17,7 +17,7 @@ def loan_total(_loan_list):
 
 
 _loan_list = []
-usr_input = input("Would you like to enter a loan?")
+usr_input = input("Would you like to enter a loan? ")
 
 while usr_input != "No":
     usr_principal = input("Please enter your total loan amount: ")
@@ -27,13 +27,14 @@ while usr_input != "No":
 
     _loan_list.append(Loan(usr_principal, usr_interest_rate, usr_period, usr_num_periods))
 
-    usr_input = input("Would you like to enter another loan?")
+    usr_input = input("Would you like to enter another loan? ")
 
 
 class Budget:
     def __init__(self, income, expenses):
         self.income = income
         self.expenses = expenses
+        self.budget = self.income - self.expenses
 
 
 if __name__ == '__main__':

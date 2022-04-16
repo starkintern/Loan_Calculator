@@ -1,4 +1,4 @@
-from Loan import Loan, Budget, loan_total, _loan_list
+from Loan import Loan, Budget, loan_total
 import datetime
 import calendar
 
