@@ -17,15 +17,17 @@ def loan_total(_loan_list):
 
 
 _loan_list = []
-for x in _loan_list:
-    _loan_list.append(Loan(principal=input(), interest_rate=input(), period=input(), num_periods=input()))
-    _loan_list.append(input("Would you like to add another loan? Type Yes or No"))
-        if input() == "Yes":
-            continue
-        if input() == "No":
-            break
-        print(_loan_list)
+usr_input = input("Would you like to enter a loan?")
 
+while usr_input != "No":
+    usr_principal = input("Please enter your total loan amount: ")
+    usr_interest_rate = input("Please enter your loan interest rate as a percentage: ")
+    usr_period = input("Please enter your interest period frequency per year (365, 12, 6, 1): ")
+    usr_num_periods = input("Please enter how many years you have accrued interest for: ")
+
+    _loan_list.append(Loan(usr_principal, usr_interest_rate, usr_period, usr_num_periods))
+
+    usr_input = input("Would you like to enter another loan?")
 
 
 class Budget:
