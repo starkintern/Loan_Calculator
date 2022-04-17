@@ -35,6 +35,7 @@ while usr_input != "no":
 # they will type "no" and the Loop will end and the _loan_list will be created and can then
 # be iterated over by the loan_total function to sum the loans.
 
+
 class Budget:
     def __init__(self, income, expenses):
         self.income = income
