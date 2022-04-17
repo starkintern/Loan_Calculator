@@ -14,6 +14,8 @@ def loan_total(_loan_list):
     total = 0
     for i in _loan_list:
         total += i
+# The above function and Loop takes the created list of loans below and iterates over each
+# and adds them together to find their sum total.
 
 
 _loan_list = []
@@ -28,7 +30,10 @@ while usr_input != "no":
     _loan_list.append(Loan(usr_principal, usr_interest_rate, usr_period, usr_num_periods))
 
     usr_input = input("Would you like to enter another loan? ")
-
+# The above Loop allows the user to create a list of their loans
+# by inputting the 4 pieces of data that make up each loan. Once they are finished entering loans,
+# they will type "no" and the Loop will end and the _loan_list will be created and can then
+# be iterated over by the loan_total function to sum the loans.
 
 class Budget:
     def __init__(self, income, expenses):
