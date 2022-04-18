@@ -11,9 +11,9 @@ class Loan:
 
 
 def loan_total(_loan_list):
-    total = 0
+    loan_total_balance = 0
     for i in _loan_list:
-        total += i
+        loan_total_balance += i
 # The above function and Loop takes the created list of loans below and iterates over each
 # and adds them together to find their sum total.
 
@@ -21,7 +21,7 @@ def loan_total(_loan_list):
 _loan_list = []
 usr_input = input("Would you like to enter a loan? ")
 
-while usr_input != "no":
+while usr_input != "no" and usr_input != "No":
     usr_principal = input("Please enter your total loan amount: ")
     usr_interest_rate = input("Please enter your loan interest rate as a percentage: ")
     usr_period = input("Please enter your interest period frequency per year (365, 12, 6, 1): ")
