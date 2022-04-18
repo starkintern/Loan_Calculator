@@ -1,4 +1,4 @@
-from Loan import Loan, Budget, loan_total, _loan_list, usr_principal
+from Loan import Loan, Budget, loan_total, _loan_list, _loan_total, usr_principal
 import datetime
 import calendar
 
@@ -36,6 +36,6 @@ end_date = start_date
 
 while usr_principal > 0:
 
-    loan_total(_loan_list) - Budget
+    _loan_total - Budget
     days_in_current_month = calendar.monthrange(end_date.year, end_date.month)[1]
     end_date = end_date + datetime.timedelta(days=days_till_end_month)
