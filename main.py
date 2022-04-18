@@ -2,7 +2,6 @@ from Loan import Loan, Budget, loan_total
 import datetime
 import calendar
 
-
 if __name__ == '__main__':
     timedelta = datetime.timedelta
     today = datetime.date.today()
@@ -51,21 +50,17 @@ if __name__ == '__main__':
         usr_interest_rate = int(input("Please enter your loan interest rate as a percentage: "))
         usr_period = int(input("Please enter your interest period frequency per year (365, 12, 6, 1): "))
         usr_num_periods = int(input("Please enter how many years you have accrued interest for: "))
-        # TODO: get user income
-        # TODO: get user expenses
-        # TODO: Create user budget
 
         _loan_list.append(Loan(usr_principal, usr_interest_rate, usr_period, usr_num_periods))
 
         usr_input = input("Would you like to enter another loan? ")
 
+    budget1 = Budget(int(input("Please enter your monthly income: ")),
+                     int(input("Please enter your monthly expenses: ")))
 
-
-    # TODO: Allow the user to enter their budget
-    budget1 = Budget(income=20, expenses=5)
     total = loan_total(_loan_list)
 
-    remaining_muns = total - budget1.budget
-    print(f"Ur reamining muns = ${remaining_muns:.2f}")
+    remaining_money = total - budget1.budget
+    print(f"Your remaining money after paying off loans = ${remaining_money:.2f}")
     days_in_current_month = calendar.monthrange(end_date.year, end_date.month)[1]
     end_date = end_date + datetime.timedelta(days=days_till_end_month)
