@@ -11,9 +11,9 @@ class Loan:
 
 
 def loan_total(_loan_list):
-    loan_total_balance = 0
+    loan_total_ = 0
     for i in _loan_list:
-        loan_total_balance += i
+        loan_total_ += i
 # The above function and Loop takes the created list of loans below and iterates over each
 # and adds them together to find their sum total.
 
