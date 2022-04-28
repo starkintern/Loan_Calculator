@@ -6,16 +6,21 @@ class Loan:
         self.principal = principal
 
     def loan_interest(self):
-        return (self.principal * (1 + (self.interest_rate / self.period))
-                ** (self.period * self.num_periods)) - self.principal
+        return (self.principal * (1 + (self.interest_rate / self.period)) ** (
+                    self.period * self.num_periods)) - self.principal
 
+
+# I need to fix the order of operations here, the resulting code
+#   either gives the user over $1 million dollars in remaining money,
+#   or after a recent test, a possible negative balance
 
 def loan_total(_loan_list):
     total = 0
     for loan in _loan_list:
         total += ((loan.principal * loan.interest_rate) * loan.period * loan.num_periods) \
-                       + loan.principal
+                 + loan.principal
     return total
+
 
 # TODO: Fix this file reeeee
 #   and continue making it better
