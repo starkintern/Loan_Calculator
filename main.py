@@ -10,11 +10,11 @@ if __name__ == '__main__':
     start_date = today + datetime.timedelta(days=days_till_end_month + 1)
     end_date = start_date
 
-    usr_principal = float(input("Enter your loan amount: "))
+    usr_principal = float(input("Please enter your loan amount: "))
 
-    usr_interest_rate = float(input("Enter your interest rate as percentage: ")) / 100
+    usr_interest_rate = float(input("Please enter your interest rate as percentage: ")) / 100
 
-    usr_period_input = input("Enter your interest period frequency per year (365, 12, 6, 1): ")
+    usr_period_input = input("Please enter your interest period frequency per year (365, 12, 6, 1): ")
 
     match usr_period_input.lower:
         case "day" | "days" | "365":
@@ -25,11 +25,11 @@ if __name__ == '__main__':
             usr_period_input = 6
         case "year" | "years" | "1":
             usr_period_input = 1
-    usr_num_periods = int(input("Enter number of years to accrue interest: "))
+    usr_num_periods = int(input("Please enter the number of years for your loan to accrue interest: "))
 
     loan1 = Loan(principal=usr_principal, interest_rate=usr_interest_rate, period=int(usr_period_input),
                  num_periods=usr_num_periods)
-    print(f"You have accrued ${loan1.loan_interest():.2f} in loan interest")
+    print(f"You will have accrued ${loan1.loan_interest():.2f} in loan interest")
 
     # The Loop below allows the user to create a list of their loans
     #   by inputting the 4 pieces of data that make up each loan. Once they are finished entering loans,
