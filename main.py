@@ -10,15 +10,11 @@ if __name__ == '__main__':
     start_date = today + datetime.timedelta(days=days_till_end_month + 1)
     end_date = start_date
 
-    usr_principal = float(input("Enter principal amount: "))
+    usr_principal = float(input("Enter your loan amount: "))
 
-    usr_interest_rate = float(input("Enter interest rate as percentage: ")) / 100
+    usr_interest_rate = float(input("Enter your interest rate as percentage: ")) / 100
 
-    usr_period_input = input("Enter interest period frequency per year (365, 12, 6, 1): ")
-
-    usr_income_input = float(input("Enter your monthly income: "))
-
-    usr_expenses_input = float(input("Enter your monthly expenses: "))
+    usr_period_input = input("Enter your interest period frequency per year (365, 12, 6, 1): ")
 
     match usr_period_input.lower:
         case "day" | "days" | "365":
@@ -33,7 +29,7 @@ if __name__ == '__main__':
 
     loan1 = Loan(principal=usr_principal, interest_rate=usr_interest_rate, period=int(usr_period_input),
                  num_periods=usr_num_periods)
-    print(loan1.loan_interest())
+    print(f"You have accrued ${loan1.loan_interest():.2f} in loan interest")
 
     # The Loop below allows the user to create a list of their loans
     #   by inputting the 4 pieces of data that make up each loan. Once they are finished entering loans,
@@ -60,7 +56,5 @@ if __name__ == '__main__':
 
     total = loan_total(_loan_list)
 
-    remaining_money = total - budget1.budget
-    print(f"Your remaining money after paying off loans = ${remaining_money:.2f}")
     days_in_current_month = calendar.monthrange(end_date.year, end_date.month)[1]
     end_date = end_date + datetime.timedelta(days=days_till_end_month)

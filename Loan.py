@@ -6,8 +6,8 @@ class Loan:
         self.principal = principal
 
     def loan_interest(self):
-        return (self.principal * (1 + (self.interest_rate / self.period)) ** (
-                    self.period * self.num_periods)) - self.principal
+        return ((1 + (self.interest_rate / self.period)) ** (
+                    self.period * self.num_periods) * self.principal) - self.principal
 
 
 # I need to fix the order of operations here, the resulting code
