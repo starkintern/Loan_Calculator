@@ -19,15 +19,15 @@ if __name__ == '__main__':
 
     usr_period_input = input("Please enter your interest period frequency per year (365, 12, 6, 1): ")
 
-    # match usr_period_input.lower:
-    #     case "day" | "days" | "365":
-    #         usr_period_input = 365
-    #     case "month" | "months" | "12":
-    #         usr_period_input = 12
-    #     case "semi-annually" | "bi-annually" | "6":
-    #         usr_period_input = 6
-    #     case "year" | "years" | "1":
-    #         usr_period_input = 1
+    match usr_period_input.lower:
+        case "day" | "days" | "365":
+            usr_period_input = 365
+        case "month" | "months" | "12":
+            usr_period_input = 12
+        case "semi-annually" | "bi-annually" | "6":
+            usr_period_input = 6
+        case "year" | "years" | "1":
+            usr_period_input = 1
     usr_num_periods = int(input("Please enter the number of years for your loan to accrue interest: "))
 
     loan1 = Loan(principal=usr_principal, interest_rate=usr_interest_rate, period=int(usr_period_input),
