@@ -55,7 +55,9 @@ if __name__ == '__main__':
     budget1 = Budget(int(input("Please enter your monthly income: ")),
                      int(input("Please enter your monthly expenses: ")))
 
-    # I need code that takes loan total created in Loan.py
+    # TODO: I need code that takes loan total created in Loan.py
     #   and subtracts budget1 away until loan_total == 0
     #   The question remains, how do I implement that, using a loop or another method?
     #   It needs to happen every month until the loan_total == 0
+    #   Double check conversation with Alec about returns and instances/classes,
+    #   how do I use "total" that is returned from the loan_total function in main.py?
