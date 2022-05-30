@@ -10,10 +10,6 @@ class Loan:
                     self.period * self.num_periods) * self.principal) - self.principal
 
 
-# I need to fix the order of operations here, the resulting code
-#   either gives the user over $1 million dollars in remaining money,
-#   or after a recent test, a possible negative balance
-
 def loan_total(_loan_list):
     total = 0
     for loan in _loan_list:

@@ -10,21 +10,24 @@ if __name__ == '__main__':
     start_date = today + datetime.timedelta(days=days_till_end_month + 1)
     end_date = start_date
 
+    days_in_current_month = calendar.monthrange(end_date.year, end_date.month)[1]
+    end_date = end_date + datetime.timedelta(days=days_till_end_month)
+
     usr_principal = float(input("Please enter your loan amount: "))
 
     usr_interest_rate = float(input("Please enter your interest rate as percentage: ")) / 100
 
     usr_period_input = input("Please enter your interest period frequency per year (365, 12, 6, 1): ")
 
-    match usr_period_input.lower:
-        case "day" | "days" | "365":
-            usr_period_input = 365
-        case "month" | "months" | "12":
-            usr_period_input = 12
-        case "semi-annually" | "bi-annually" | "6":
-            usr_period_input = 6
-        case "year" | "years" | "1":
-            usr_period_input = 1
+    # match usr_period_input.lower:
+    #     case "day" | "days" | "365":
+    #         usr_period_input = 365
+    #     case "month" | "months" | "12":
+    #         usr_period_input = 12
+    #     case "semi-annually" | "bi-annually" | "6":
+    #         usr_period_input = 6
+    #     case "year" | "years" | "1":
+    #         usr_period_input = 1
     usr_num_periods = int(input("Please enter the number of years for your loan to accrue interest: "))
 
     loan1 = Loan(principal=usr_principal, interest_rate=usr_interest_rate, period=int(usr_period_input),
@@ -39,8 +42,6 @@ if __name__ == '__main__':
     _loan_list = []
     usr_input = input("Would you like to enter a loan? ")
 
-    usr_principal = 0
-
     while "no" not in usr_input.lower():
         usr_principal = int(input("Please enter your total loan amount: "))
         usr_interest_rate = int(input("Please enter your loan interest rate as a percentage: "))
@@ -54,7 +55,7 @@ if __name__ == '__main__':
     budget1 = Budget(int(input("Please enter your monthly income: ")),
                      int(input("Please enter your monthly expenses: ")))
 
-    total = loan_total(_loan_list)
-
-    days_in_current_month = calendar.monthrange(end_date.year, end_date.month)[1]
-    end_date = end_date + datetime.timedelta(days=days_till_end_month)
+    # I need code that takes loan total created in Loan.py
+    #   and subtracts budget1 away until loan_total == 0
+    #   The question remains, how do I implement that, using a loop or another method?
+    #   It needs to happen every month until the loan_total == 0
