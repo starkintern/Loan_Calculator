@@ -1,9 +1,9 @@
 class Loan:
     def __init__(self, principal, interest_rate, period, num_periods):
-        self.num_periods = num_periods
-        self.period = period
-        self.interest_rate = interest_rate
         self.principal = principal
+        self.interest_rate = interest_rate
+        self.period = period
+        self.num_periods = num_periods
 
     def loan_interest(self):
         return ((1 + (self.interest_rate / self.period)) ** (

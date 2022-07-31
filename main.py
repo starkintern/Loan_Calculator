@@ -55,6 +55,13 @@ if __name__ == '__main__':
     budget1 = Budget(int(input("Please enter your monthly income: ")),
                      int(input("Please enter your monthly expenses: ")))
 
+    while loan_total(_loan_list) != 0:
+        loan_total_zero = Budget - loan_total(_loan_list)
+
+        if loan_total(_loan_list) == 0:
+            break
+        print(loan_total_zero, "You have paid off all of your loans!")
+
     # TODO: I need code that takes loan total created in Loan.py
     #   and subtracts budget1 away until loan_total == 0
     #   The question remains, how do I implement that, using a loop or another method?
